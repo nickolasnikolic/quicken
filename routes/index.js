@@ -12,6 +12,7 @@ router.get('/az/:searchQuery', function(req, res, next) {
 
   amazon.getItemsInBrowseNode({
     Keywords: req.params.searchQuery,
+    SearchIndex: 'Books',
     ResponseGroup: 'Large'
   }, function(err, response){
     res.status(200).send(response);
