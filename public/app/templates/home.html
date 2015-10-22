@@ -1,43 +1,19 @@
 
-<section><button class="btn btn-lg" data-toggle="modal" data-target="#submitEq">Add an equation to the list!</button></section>
-<section class="col-md-8 col-sm-8 login" id="HomeContainer">
-
-  <article class="col-md-4 col-sm-6" ng-repeat="equation in equations">
-    <h2>{{equation.name}}</h2>
-    <p>{{equation.area}}</p>
-    <div ng-bind-html="equation.equation | asciiMath | trust"></div>
-    <p>{{equation.discoveredBy}}</p>
-    <p>{{equation.firstCreated | momentTimeAgo}}</p>
-    <p>{{equation.submittedBy}}</p>
-  </article>
+<section>
+  <form>
+    <input ng-model="keywords" type="text" placeholder="type your amazon search here" name="azSearch"/>
+    <button ng-click="getItems(keywords)" class="btn btn-lg" data-toggle="modal" data-target="#submitEq">search!</button>
+  </form>
 </section>
 
-<aside class="col-md-3 col-sm-12 ads">
-  <a href="http://facebook.com/blindworm.me" target="_blank" class="zocial facebook">take me</a>
-  <a href="http://twitter.com/blindwormme" target="_blank" class="zocial twitter">take me</a>
-  <a href="https://plus.google.com/104485228807444642016" target="_blank" class="zocial googleplus">take me</a>
-</aside>
+<section class="col-md-8 col-sm-8 login" id="HomeContainer">
 
-<div id="submitEq" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title">Enter an equation:</h2>
-      </div>
-      <div class="modal-body">
-        <form>
-          <p>name: <input name="name" type="text" ng-model="equation.name" /></p>
-          <p>domain of math: <input name="domain" type="text" ng-model="equation.domain" /></p>
-          <p>equation (in ASCIIMath format): <input name="equation" type="text" ng-model="equation.equation" /></p>
-          <p>discoverer of the equation: <input name="discoveredBy" type="text" ng-model="equation.discoveredBy" /></p>
-          <p>submitter (if you want to leave your name): <input name="submitter" type="text" ng-model="equation.submittedBy" /></p>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button ng-click="submitEq(equation)" type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+  <article class="col-md-4 col-sm-6" ng-repeat="item in items">
+    <h2>{{item}}</h2>
+    <p>{{item.placeholder}}</p>
+    <p>{{item.placeholder}}</p>
+    <p>{{item.placeholder}}</p>
+    <p>{{item.placeholder}}</p>
+  </article>
+
+</section>

@@ -1,36 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-var Equation = require('../models/Equation');
+var AmazonAPI = require('amz-products');
 
-router.get('/equations', function(req, res, next) {
-  Equation.find({},function(err, equations){
-    res.status(200).send( equations );
+router.get('/az/:searchQuery', function(req, res, next) {
+  var amazon = new AmazonAPI({
+    accessKeyId     : process.env.AMAZON_ACCESS,
+    secretAccessKey : process.env.AMAZON_SECRET,
+    associateId     : process.env.AMAZON_ASSOCIATE_TAG
   });
-});
 
-router.get('/equation/:id', function(req, res, next) {
-  Equation.findOne({
-    id: req.param.id
-  },function(err, equation){
-    res.status(200).send( equation );
+  amazon.getItemsInBrowseNode({
+    kewords: req.params.searchQuery
+  }, function(err, response){
+    res.status(200).send(response);
   });
+
 });
 
 router.get('/', function(req, res, next) {
   res.status(200).send('test');
-});
-
-router.post('/equation', function(req, res, next){
-  Equation({
-    name: req.body.name || '',
-    area: req.body.area || '',
-    equation: req.body.equation || '',
-    discoveredBy:req.body.discoveredBy || '',
-    lastEdited: Date.now(),
-    firstCreated: Date.now()
-  }).save();
-  res.status(200);
 });
 
 module.exports = router;
