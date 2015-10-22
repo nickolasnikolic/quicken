@@ -6,8 +6,7 @@ blindApp.controller('HomeController', ['$scope', '$state', '$http', '$sce', 'glo
   $scope.getItems = function( keywords ){
       $http.get('/api/az/' + keywords)
           .then(function(response){
-            console.log(response.data);
-            $scope.items = response.data;
+            $scope.items = response.data.ItemSearchResponse.Items;
           });
   };
 
