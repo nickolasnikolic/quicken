@@ -1,14 +1,14 @@
 
-<section>
+<section class="col-md-12 col-sm-12">
   <form>
     <input ng-model="keywords" type="text" placeholder="type your amazon search here" name="azSearch"/>
     <button ng-click="getItems(keywords)" class="btn btn-lg" data-toggle="modal" data-target="#submitEq">search!</button>
   </form>
 </section>
 
-<section class="col-md-8 col-sm-8 login" id="HomeContainer">
+<section class="col-md-12 col-sm-12" id="HomeContainer">
 
-  <article class="col-md-4 col-sm-6" ng-repeat="item in items">
+  <article class="col-md-6 col-sm-6" ng-repeat="item in items">
     <a ng-href="{{item.DetailPageURL}}">
       <h2>{{item.ItemAttributes.Title}}</h2>
       <p>{{item.ItemAttributes.Author}}</p>
