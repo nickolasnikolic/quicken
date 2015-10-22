@@ -11,7 +11,8 @@ router.get('/az/:searchQuery', function(req, res, next) {
   });
 
   amazon.getItemsInBrowseNode({
-    Keywords: req.params.searchQuery
+    Keywords: req.params.searchQuery,
+    ResponseGroup: 'Large'
   }, function(err, response){
     res.status(200).send(response);
   });
