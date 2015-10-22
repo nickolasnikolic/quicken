@@ -10,4 +10,5 @@ blindApp.controller('HomeController', ['$scope', '$state', '$http', '$sce', 'glo
             $scope.items = response.data;
           });
   };
+
 }])
