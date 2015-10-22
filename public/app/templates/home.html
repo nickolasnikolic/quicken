@@ -8,12 +8,12 @@
 
 <section class="col-md-12 col-sm-12" id="HomeContainer">
 
-  <article class="col-md-6 col-sm-6 pull-left" ng-repeat="item in items">
+  <article class="col-md-4 col-sm-6" ng-repeat="item in items">
     <a ng-href="{{item.DetailPageURL}}">
       <h2>{{item.ItemAttributes.Title}}</h2>
       <p>{{item.ItemAttributes.Author}}</p>
       <p>{{item.EditorialReviews.EditorialReview.Content}}</p>
-      <p><img ng-src="{{item.LargeImage.URL}}" /></p>
+      <p><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></p>
       <p>{{item.ASIN}}</p>
     </a>
   </article>

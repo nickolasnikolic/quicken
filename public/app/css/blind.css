@@ -89,7 +89,7 @@ footer{
 }
 
 a{
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   color: inherit;
 }
