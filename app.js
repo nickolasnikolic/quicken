@@ -4,10 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var apiRoutes = require('./routes/index');
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blind');
+var apiRoutes = require('./routes/index');
 
 var app = express();
 
