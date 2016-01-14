@@ -15,6 +15,13 @@ blindApp
     }]);
 
 blindApp
+    .filter('decodeUrl', [function() {
+        return function(url) {
+            return decodeURI(url);
+        };
+    }]);
+
+blindApp
     .filter('momentTimeAgo', function($sce) {
         return function(value, type) {
             return moment(value).fromNow();
