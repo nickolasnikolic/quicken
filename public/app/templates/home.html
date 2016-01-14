@@ -12,7 +12,7 @@
     <a ng-href="{{item.DetailPageURL}}">
       <h2>{{item.ItemAttributes.Title}}</h2>
       <p>{{item.ItemAttributes.Author}}</p>
-      <p>{{item.EditorialReviews.EditorialReview.Content}}</p>
+      <p ng-bind-html="item.EditorialReviews.EditorialReview.Content"></p>
       <p><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></p>
       <p>{{item.ASIN}}</p>
     </a>
