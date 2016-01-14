@@ -9,13 +9,13 @@
 <section class="col-md-12 col-sm-12" id="HomeContainer">
 
   <article class="col-md-6 col-md-offset-4 col-sm-6" ng-repeat="item in items">
-    <a ng-href="{{item.DetailPageURL}}">
-      <h2>{{item.ItemAttributes.Title}}</h2>
+
+      <h2><a ng-href="{{item.DetailPageURL}}">{{item.ItemAttributes.Title}}</a></h2>
       <p>{{item.ItemAttributes.Author}}</p>
       <p ng-bind-html="item.EditorialReviews.EditorialReview.Content"></p>
-      <p><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></p>
+      <p><a ng-href="{{item.DetailPageURL}}"><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></a></p>
       <p class="isbn">{{item.ASIN}}</p>
-    </a>
+
   </article>
 
 </section>
