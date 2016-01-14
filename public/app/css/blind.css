@@ -147,6 +147,9 @@ button:focus{
   box-shadow: 0px 0px 5px black;
 }
 
+.isbn{
+  clear: both;
+}
 
 @media screen and (max-width: 921px){
   h1{
