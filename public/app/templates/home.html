@@ -10,10 +10,10 @@
 
   <article class="col-md-6 col-md-offset-4 col-sm-6" ng-repeat="item in items">
 
-      <h2><a href="{{item.DetailPageURL}}">{{item.ItemAttributes.Title}}</a></h2>
+      <h2><a ng-href="{{item.DetailPageURL | trustUrl}}">{{item.ItemAttributes.Title}}</a></h2>
       <p>{{item.ItemAttributes.Author}}</p>
       <p ng-bind-html="item.EditorialReviews.EditorialReview.Content"></p>
-      <p><a href="{{item.DetailPageURL}}"><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></a></p>
+      <p><a ng-href="{{item.DetailPageURL | trustUrl}}"><img class="pull-left" ng-src="{{item.LargeImage.URL}}" /></a></p>
       <p class="isbn">{{item.ASIN}}</p>
 
   </article>
