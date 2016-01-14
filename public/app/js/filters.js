@@ -17,7 +17,7 @@ blindApp
 blindApp
     .filter('decodeUrl', [function() {
         return function(url) {
-            return decodeURI(url);
+            return decodeURIComponent(url);
         };
     }]);
 
